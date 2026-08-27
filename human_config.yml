@@ -1,0 +1,37 @@
+#############################
+### Project configuration ###
+#############################
+
+# Indicate present working directory and metadata (sample) table
+
+workdir: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/"
+sample_table: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/config/pipelineConfigs/human_samples.tsv" # replace this with your actual sample table
+my_tmp_path: "/global/scratch/users/landen_gozashti/resources/tmp"
+
+# data is expected in the /global/path/to/hifi_dn_alu/data/ folder relative to the working directory
+# to minimize issues with snakemake's wildcard parsing, use the structure below
+bam_basepath: "data/{group}/{specimen}/{lane}/{smrtcell}.bam"
+
+
+
+###############################
+### Analysis config options ###
+###############################
+
+# Indicate reference genome + annotation files (.bed, .gff, etc)
+# The alias will be used for organizing mapping outputs:
+# for example, output/alignment/CHM13 or output/alignment/hg38_no_alts
+
+# Reference genome and annotations are expected in the default empty ./references directory.
+
+reference:
+  fasta: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/stacy_pipeline/analysis/human_sperm/references/hg38/GRCh38.primary_assembly.genome.fa"
+  alias: "humanT2T"
+  regions: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/data/hg38_all_imprinted_supp6_conserved.tsv"
+  annotations:
+    repeats: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/stacy_pipeline/analysis/human_sperm/references/repeats/simple_repeats_sat_all.bed.sorted"
+
+
+samtools:
+  minQ: 10
+
