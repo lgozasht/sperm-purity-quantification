@@ -5,7 +5,7 @@
 # Indicate present working directory and metadata (sample) table
 
 workdir: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/"
-sample_table: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/config/pipelineConfigs/human_samples.tsv" # replace this with your actual sample table
+sample_table: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/config/pipelineConfigs/template_samples.tsv" # replace this with your actual sample table
 my_tmp_path: "/global/scratch/users/landen_gozashti/resources/tmp"
 
 # data is expected in the /global/path/to/hifi_dn_alu/data/ folder relative to the working directory
@@ -28,10 +28,3 @@ reference:
   fasta: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/stacy_pipeline/analysis/human_sperm/references/hg38/GRCh38.primary_assembly.genome.fa"
   alias: "humanT2T"
   regions: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/data/hg38_all_imprinted_supp6_conserved.tsv"
-  annotations:
-    repeats: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/stacy_pipeline/analysis/human_sperm/references/repeats/simple_repeats_sat_all.bed.sorted"
-
-
-samtools:
-  minQ: 10
-
