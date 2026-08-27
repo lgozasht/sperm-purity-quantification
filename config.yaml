@@ -1,0 +1,13 @@
+executor: slurm
+jobs: 60
+printshellcmds: True
+default-resources: 
+  slurm_account: 'co_genomicdata'
+  slurm_partition: 'savio4_htc'
+  qos: 'genomicdata_htc4_normal'
+  mem_mb: f"{attempt * 80000}"
+  runtime: 16000 #was 16000
+  tmpdir: "/global/scratch/users/landen_gozashti/resources/tmp"
+set-resources:
+  pbmm2:
+    mem_mb: f"{attempt * 200000}"
