@@ -11,7 +11,7 @@ You'll  need to generate dataset-specific template_config.yml and template_sampl
 | specimen | group | lane | smrtcell | 
 | :--- | :--- | :--- | :--- |
 
-In the config file you'll need to edit ```workdir```, ```sample_table```, ```reference```, and ```regions```. ```reference``` should just be the full path to the HG38 reference fasta file. ```regions``` should be the path to ```hg38_all_imprinted_supp6_conserved.tsv```.
+In the config file you'll need to edit ```workdir```, ```sample_table```, ```reference```, ```alias```, and ```regions```. If you're working in humans```reference``` should just be the full path to the hg38 reference fasta file and ```regions``` should be the path to ```hg38_all_imprinted_supp6_conserved.tsv```. If you're working in a different species, leave ```regions``` as None. The pipeline will automatically liftover imprinted regions from hg38 to your genome of interest. Make sure to change the reference alias from hg38 to something else if you're using a different genome. This is what queues the pipeline to perform a liftover.
 
 
 ## Snakemake requirements
