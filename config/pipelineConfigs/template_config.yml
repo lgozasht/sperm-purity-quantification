@@ -22,9 +22,14 @@ bam_basepath: "data/{group}/{specimen}/{lane}/{smrtcell}.bam"
 # The alias will be used for organizing mapping outputs:
 # for example, output/alignment/CHM13 or output/alignment/hg38_no_alts
 
-# Reference genome and annotations are expected in the default empty ./references directory.
+# Reference genome and annotations. If you are working with a different genome, change reference fasta and reference alias. Then, set reference region to none.
 
 reference:
   fasta: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/stacy_pipeline/analysis/human_sperm/references/hg38/GRCh38.primary_assembly.genome.fa"
-  alias: "humanT2T"
+  alias: "hg38"
+  regions: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/data/hg38_all_imprinted_supp6_conserved.tsv"
+
+# hg38 fasta should always be the path to hg38 genome file. hg38 regions should always be the path to the provided hg38_all_imprinted_supp6_conserved.tsv file.
+hg38:
+  fasta:  "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/stacy_pipeline/analysis/human_sperm/references/hg38/GRCh38.primary_assembly.genome.fa"
   regions: "/global/scratch/users/landen_gozashti/projects/Sperm_diversity/methylation_purity/human/data/hg38_all_imprinted_supp6_conserved.tsv"
